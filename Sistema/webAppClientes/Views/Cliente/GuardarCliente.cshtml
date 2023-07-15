@@ -1,0 +1,32 @@
+﻿@model ClienteModel
+@{
+    ViewData["Title"] = "GuardarCliente";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card">
+    <div class="card-header">
+        <i class="bi bi-person-fill-add"></i> Crear Cliente
+    </div>
+    <div class="card-body">
+        <form asp-action="GuardarCliente" asp-controller="Cliente" method="post">
+            <div class="mb-3">
+                <label for="nombreInput" class="form-label">Nombre del Cliente</label>
+                <input asp-for="PrimerNombre" type="text" class="form-control" id="nombreInput">
+                <span asp-validation-for="PrimerNombre" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label for="apellidoInput" class="form-label">Apellido del Cliente</label>
+                <input asp-for="PrimerApellido" type="text" class="form-control" id="apellidoInput">
+                <span asp-validation-for="PrimerApellido" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label for="edadInput" class="form-label">Edad del Cliente</label>
+                <input asp-for="Edad" type="number" class="form-control" id="edadInput">
+                <span asp-validation-for="Edad" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> Guardar</button>
+            <a asp-action="ListaCliente" asp-controller="Cliente" class="btn btn-warning"><i class="bi bi-skip-backward-btn"></i> Regresar</a>
+        </form>
+    </div>
+</div>
+
